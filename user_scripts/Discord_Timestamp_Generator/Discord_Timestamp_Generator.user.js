@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Discord Timestamp Generator
 // @namespace   discord-timestamp
-// @version     1.1
+// @version     1.2
 // @description Creates a popup for generating Discord timestamps with a hotkey
 // @author      Dontaz
 // @match       *://*/*
@@ -17,84 +17,101 @@
 
     const cssStyles = `
         #discord-timestamp-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); z-index: 2147483646;
+            position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.5) !important; z-index: 2147483646 !important;
             display: none; animation: dtg-fadeIn 0.2s ease-out;
-            margin: 0; padding: 0;
+            margin: 0 !important; padding: 0 !important;
         }
         #discord-timestamp-popup {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background-color: #313338; color: #dbdee1; border-radius: 8px; padding: 24px;
-            z-index: 2147483647; box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
-            font-family: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            width: 500px; display: none; font-size: 16px;
-            line-height: 1.5; text-align: left; box-sizing: border-box;
-            animation: dtg-slideIn 0.2s ease-out;
+            position: fixed !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important;
+            background-color: #313338 !important; color: #dbdee1 !important; border-radius: 8px !important; padding: 24px !important;
+            z-index: 2147483647 !important; box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2) !important;
+            font-family: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            width: 500px !important; display: none; font-size: 16px !important;
+            line-height: 1.5 !important; text-align: left !important; box-sizing: border-box !important;
+            animation: dtg-slideIn 0.2s ease-out; border: none !important;
         }
+        
         #discord-timestamp-popup * {
-            box-sizing: border-box;
+            box-sizing: border-box !important;
+            font-family: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            scrollbar-width: thin;
         }
+
         @keyframes dtg-fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes dtg-slideIn {
             from { opacity: 0; transform: translate(-50%, -45%); }
             to { opacity: 1; transform: translate(-50%, -50%); }
         }
+
         #discord-timestamp-popup h2 { 
-            margin: 0 0 20px 0; color: #f2f3f5; font-size: 24px; 
-            display: flex; justify-content: space-between; line-height: 1.2; 
-            border: none; padding: 0; background: none;
+            margin: 0 0 20px 0 !important; color: #f2f3f5 !important; font-size: 24px !important; 
+            display: flex !important; justify-content: space-between !important; line-height: 1.2 !important; 
+            border: none !important; padding: 0 !important; background: none !important; font-weight: 700 !important;
         }
-        #discord-timestamp-popup .close-x { cursor: pointer; color: #b5bac1; transition: color 0.2s; }
-        #discord-timestamp-popup .close-x:hover { color: #f2f3f5; }
-        #discord-timestamp-popup .input-group { margin-bottom: 20px; }
+        #discord-timestamp-popup .close-x { cursor: pointer !important; color: #b5bac1 !important; transition: color 0.2s !important; font-weight: normal !important; }
+        #discord-timestamp-popup .close-x:hover { color: #f2f3f5 !important; }
+        
+        #discord-timestamp-popup .input-group { margin-bottom: 20px !important; display: block !important; }
         #discord-timestamp-popup label { 
-            display: block; margin-bottom: 8px; font-size: 12px; 
-            color: #b5bac1; text-transform: uppercase; font-weight: 700; 
-            line-height: 1.3;
+            display: block !important; margin-bottom: 8px !important; font-size: 12px !important; 
+            color: #b5bac1 !important; text-transform: uppercase !important; font-weight: 700 !important; 
+            line-height: 1.3 !important; padding: 0 !important; letter-spacing: 0.02em !important;
         }
-        #discord-timestamp-popup .input-wrapper { position: relative; display: block; }
+        
+        #discord-timestamp-popup .input-wrapper { position: relative !important; display: block !important; height: auto !important; }
+        
         #discord-timestamp-popup .now-button {
-            position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
-            background-color: #5865f2; color: white; border: none; padding: 4px 12px;
-            border-radius: 3px; font-size: 13px; cursor: pointer; transition: background-color 0.2s;
-            line-height: normal; height: auto; margin: 0;
+            position: absolute !important; right: 8px !important; top: 50% !important; transform: translateY(-50%) !important;
+            background-color: #5865f2 !important; color: white !important; border: none !important; padding: 4px 12px !important;
+            border-radius: 3px !important; font-size: 13px !important; cursor: pointer !important; transition: background-color 0.2s !important;
+            line-height: normal !important; height: auto !important; margin: 0 !important; width: auto !important;
+            box-shadow: none !important; text-shadow: none !important; min-height: 0 !important;
         }
-        #discord-timestamp-popup .now-button:hover { background-color: #4752c4; }
+        #discord-timestamp-popup .now-button:hover { background-color: #4752c4 !important; }
+        
         #discord-timestamp-popup input, #discord-timestamp-popup select {
-            width: 100%; padding: 10px; border: 1px solid #1e1f22;
-            background-color: #1e1f22; color: #f2f3f5; border-radius: 4px;
-            font-size: 16px; height: 40px; box-sizing: border-box;
-            margin: 0; display: block; line-height: normal;
+            width: 100% !important; padding: 10px !important; border: 1px solid #1e1f22 !important;
+            background-color: #1e1f22 !important; color: #f2f3f5 !important; border-radius: 4px !important;
+            font-size: 16px !important; height: 40px !important; min-height: 40px !important; max-height: 40px !important;
+            box-sizing: border-box !important; margin: 0 !important; display: block !important;
+            line-height: normal !important; -webkit-appearance: none !important; appearance: none !important;
+            box-shadow: none !important; text-indent: 0 !important;
         }
-        #discord-timestamp-popup input:focus, #discord-timestamp-popup select:focus { outline: none; border-color: #5865f2; }
+        #discord-timestamp-popup input:focus, #discord-timestamp-popup select:focus { outline: none !important; border-color: #5865f2 !important; }
+        
         #discord-timestamp-popup #timestamp-preview {
-            background-color: #2b2d31; padding: 12px; border-radius: 4px;
-            display: flex; justify-content: space-between; align-items: center;
-            font-family: monospace; border: 1px solid #1e1f22;
-            min-height: 40px;
+            background-color: #2b2d31 !important; padding: 12px !important; border-radius: 4px !important;
+            display: flex !important; justify-content: space-between !important; align-items: center !important;
+            font-family: monospace !important; border: 1px solid #1e1f22 !important;
+            min-height: 40px !important; margin: 0 !important; line-height: normal !important;
         }
-        #discord-timestamp-popup .preview-example { color: #949ba4; font-size: 14px; font-family: sans-serif; }
-        #discord-timestamp-popup .buttons { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+        #discord-timestamp-popup .preview-example { color: #949ba4 !important; font-size: 14px !important; font-family: "gg sans", sans-serif !important; }
+        
+        #discord-timestamp-popup .buttons { display: flex !important; justify-content: flex-end !important; gap: 12px !important; margin-top: 24px !important; }
         #discord-timestamp-popup button.action-btn {
-            padding: 10px 24px; border: none; border-radius: 3px; cursor: pointer; 
-            font-size: 14px; font-weight: 500; transition: background-color 0.2s;
-            line-height: normal; margin: 0; height: auto;
+            padding: 10px 24px !important; border: none !important; border-radius: 3px !important; cursor: pointer !important; 
+            font-size: 14px !important; font-weight: 500 !important; transition: background-color 0.2s !important;
+            line-height: normal !important; margin: 0 !important; height: auto !important; width: auto !important;
+            background-image: none !important; text-shadow: none !important;
         }
-        #discord-timestamp-popup .copy-btn { background-color: #5865f2; color: white; }
-        #discord-timestamp-popup .copy-btn:hover { background-color: #4752c4; }
-        #discord-timestamp-popup .close-btn { background-color: transparent; color: white; }
-        #discord-timestamp-popup .close-btn:hover { text-decoration: underline; }
+        #discord-timestamp-popup .copy-btn { background-color: #5865f2 !important; color: white !important; }
+        #discord-timestamp-popup .copy-btn:hover { background-color: #4752c4 !important; }
+        #discord-timestamp-popup .close-btn { background-color: transparent !important; color: white !important; }
+        #discord-timestamp-popup .close-btn:hover { text-decoration: underline !important; }
+        
         #discord-timestamp-popup .success-message {
-            position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%);
-            background-color: #23a559; color: white; padding: 8px 16px; border-radius: 4px;
-            font-size: 14px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-            z-index: 2147483648; width: auto; text-align: center;
+            position: absolute !important; bottom: 85px !important; left: 50% !important; transform: translateX(-50%) !important;
+            background-color: #23a559 !important; color: white !important; padding: 8px 16px !important; border-radius: 4px !important;
+            font-size: 14px !important; opacity: 0; pointer-events: none !important; transition: opacity 0.3s !important;
+            z-index: 2147483648 !important; width: auto !important; text-align: center !important; line-height: normal !important;
         }
-        #discord-timestamp-popup .success-message.show { opacity: 1; }
+        #discord-timestamp-popup .success-message.show { opacity: 1 !important; }
+        
         #discord-timestamp-popup .hotkey-info { 
-            text-align: center; color: #949ba4; font-size: 12px; 
-            margin-top: 16px; padding-top: 10px; border-top: 1px solid #3f4147; 
-            line-height: 1.5;
+            text-align: center !important; color: #949ba4 !important; font-size: 12px !important; 
+            margin-top: 16px !important; padding-top: 10px !important; border-top: 1px solid #3f4147 !important; 
+            line-height: 1.5 !important; display: block !important; width: 100% !important;
         }
     `;
 
