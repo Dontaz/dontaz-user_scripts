@@ -7,8 +7,6 @@
 
 Для работы скриптов в браузере нужно установить одно из расширений:
 
-### Chrome и Chromium Based
-
 [![Tampermonkey Chrome](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20Tampermonkey%20%D0%B4%D0%BB%D1%8F%20Chrome%20%D0%B8%20Chromium%20Based%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BE%D0%B2%20-%20%20?style=for-the-badge&logo=chromewebstore&logoColor=white&labelColor=E3351E&color=white)](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 [![Violentmonkey Chrome](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20Violentmonkey%20%D0%B4%D0%BB%D1%8F%20Chrome%20%D0%B8%20Chromium%20Based%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BE%D0%B2%20-%20%20?style=for-the-badge&logo=chromewebstore&logoColor=white&labelColor=E3351E&color=white)](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
@@ -20,6 +18,8 @@
 [![Tampermonkey Edge](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20Tampermonkey%20%D0%B4%D0%BB%D1%8F%20Edge%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0%20-%20%20?style=for-the-badge&logo=e&logoColor=white&labelColor=E3351E&color=white)](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
 
 [![Violentmonkey Edge](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20Violentmonkey%20%D0%B4%D0%BB%D1%8F%20Edge%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0%20-%20%20?style=for-the-badge&logo=e&logoColor=white&labelColor=E3351E&color=white)](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao)
+
+Затем перейти по ссылке установки нужного вам скрипта.
 
 ---
 
