@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Discord Timestamp Generator
 // @namespace   discord-timestamp
-// @version     1.2
+// @version     1.3
 // @description Creates a popup for generating Discord timestamps with a hotkey
 // @author      Dontaz
 // @match       *://*/*
