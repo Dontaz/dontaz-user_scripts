@@ -25,11 +25,33 @@
 
 ## Скрипты
 
+---
+
 ### Discord Timestamp Generator 
 
-[![Download Discord_Timestamp_Generator](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%20%2F%20Install%20script%20-%20%20?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIzIDIgMTggMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05LjE2MyAyLjgxOUM5IDMuMTM5IDkgMy41NTkgOSA0LjRWMTFINy44MDNjLS44ODMgMC0xLjMyNSAwLTEuNTM0LjE3NmEuNzUuNzUgMCAwIDAtLjI2Ni42MmMuMDE3LjI3NC4zMjIuNTkzLjkzMSAxLjIzMmw0LjE5OCA0LjQwMWMuMzAyLjMxOC40NTMuNDc2LjYzLjUzNWEuNzQ5Ljc0OSAwIDAgMCAuNDc2IDBjLjE3Ny0uMDU5LjMyOC0uMjE3LjYzLS41MzVsNC4xOTgtNC40Yy42MS0uNjQuOTE0LS45Ni45My0xLjIzM2EuNzUuNzUgMCAwIDAtLjI2NS0uNjJDMTcuNTIyIDExIDE3LjA4MSAxMSAxNi4xOTcgMTFIMTVWNC40YzAtLjg0IDAtMS4yNi0uMTY0LTEuNTgxYTEuNSAxLjUgMCAwIDAtLjY1NS0uNjU2QzEzLjg2MSAyIDEzLjQ0MSAyIDEyLjYgMmgtMS4yYy0uODQgMC0xLjI2IDAtMS41ODEuMTYzYTEuNSAxLjUgMCAwIDAtLjY1Ni42NTZ6TTUgMjFhMSAxIDAgMCAwIDEgMWgxMmExIDEgMCAxIDAgMC0ySDZhMSAxIDAgMCAwLTEgMXoiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4%3D&labelColor=green&color=white)](https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/Discord_Timestamp_Generator/Discord_Timestamp_Generator.user.js)
+[![Download Discord Timestamp Generator](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%20%2F%20Install%20script%20-%20%20?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIzIDIgMTggMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05LjE2MyAyLjgxOUM5IDMuMTM5IDkgMy41NTkgOSA0LjRWMTFINy44MDNjLS44ODMgMC0xLjMyNSAwLTEuNTM0LjE3NmEuNzUuNzUgMCAwIDAtLjI2Ni42MmMuMDE3LjI3NC4zMjIuNTkzLjkzMSAxLjIzMmw0LjE5OCA0LjQwMWMuMzAyLjMxOC40NTMuNDc2LjYzLjUzNWEuNzQ5Ljc0OSAwIDAgMCAuNDc2IDBjLjE3Ny0uMDU5LjMyOC0uMjE3LjYzLS41MzVsNC4xOTgtNC40Yy42MS0uNjQuOTE0LS45Ni45My0xLjIzM2EuNzUuNzUgMCAwIDAtLjI2NS0uNjJDMTcuNTIyIDExIDE3LjA4MSAxMSAxNi4xOTcgMTFIMTVWNC40YzAtLjg0IDAtMS4yNi0uMTY0LTEuNTgxYTEuNSAxLjUgMCAwIDAtLjY1NS0uNjU2QzEzLjg2MSAyIDEzLjQ0MSAyIDEyLjYgMmgtMS4yYy0uODQgMC0xLjI2IDAtMS41ODEuMTYzYTEuNSAxLjUgMCAwIDAtLjY1Ni42NTZ6TTUgMjFhMSAxIDAgMCAwIDEgMWgxMmExIDEgMCAxIDAgMC0ySDZhMSAxIDAgMCAwLTEgMXoiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4%3D&labelColor=green&color=white)](https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/Discord_Timestamp_Generator/Discord_Timestamp_Generator.user.js)
 
 По нажатию сочетания клавиш «Alt + A» выходит окно, где можно легко и быстро создать timestamp, который можно вставить в чат Discord.
 
 ---
 
+### Kinopoisk rating on IMDb
+
+[![Download Kinopoisk rating on IMDb](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%20%2F%20Install%20script%20-%20%20?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjgwMHB4IiBoZWlnaHQ9IjgwMHB4IiB2aWV3Qm94PSIzIDIgMTggMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05LjE2MyAyLjgxOUM5IDMuMTM5IDkgMy41NTkgOSA0LjRWMTFINy44MDNjLS44ODMgMC0xLjMyNSAwLTEuNTM0LjE3NmEuNzUuNzUgMCAwIDAtLjI2Ni42MmMuMDE3LjI3NC4zMjIuNTkzLjkzMSAxLjIzMmw0LjE5OCA0LjQwMWMuMzAyLjMxOC40NTMuNDc2LjYzLjUzNWEuNzQ5Ljc0OSAwIDAgMCAuNDc2IDBjLjE3Ny0uMDU5LjMyOC0uMjE3LjYzLS41MzVsNC4xOTgtNC40Yy42MS0uNjQuOTE0LS45Ni45My0xLjIzM2EuNzUuNzUgMCAwIDAtLjI2NS0uNjJDMTcuNTIyIDExIDE3LjA4MSAxMSAxNi4xOTcgMTFIMTVWNC40YzAtLjg0IDAtMS4yNi0uMTY0LTEuNTgxYTEuNSAxLjUgMCAwIDAtLjY1NS0uNjU2QzEzLjg2MSAyIDEzLjQ0MSAyIDEyLjYgMmgtMS4yYy0uODQgMC0xLjI2IDAtMS41ODEuMTYzYTEuNSAxLjUgMCAwIDAtLjY1Ni42NTZ6TTUgMjFhMSAxIDAgMCAwIDEgMWgxMmExIDEgMCAxIDAgMC0ySDZhMSAxIDAgMCAwLTEgMXoiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4%3D&labelColor=green&color=white)](https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/Kinopoisk_rating_on_IMDb/Kinopoisk_rating_on_IMDb.user.js) (Для работы нужно вставить API ключ, прочтите инструкцию ниже)
+
+На страницах фильмов и сериалов на сайте IMDb будет отображаться их рейтинг с Кинопоиска. Для работы скрипта нужен API ключ:
+
+- Вариант установки №1 (ПРОСТОЙ, РЕКОМЕНДУЕТСЯ)
+	- Зайдите на сайт по [этой ссылке (клик по тексту)](https://dontaz.github.io/other/code-generator-kinopoisk-imdb-rating/generator.html)
+	- Следуйте инструкции на сайте
+- Вариант установки №2
+	- Нажмите на кнопку установки скрипта [выше](https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/Kinopoisk_rating_on_IMDb/Kinopoisk_rating_on_IMDb.user.js)
+	- В зависимости от вашего расширения, зайдите в список установленных скриптов
+	- Перейдите в настройки (просмотр кода) скрипта
+	- Нужно получить свой индивидуальный API-ключ:
+		- Перейдите на сайт [https://kinopoiskapiunofficial.tech/](https://kinopoiskapiunofficial.tech/)
+		- Зарегистрируйтесь или войдите в свой аккаунт
+		- На главной странице сайта перейдите в профиль (кнопка "Профиль" справа-сверху)
+		- Скопируйте ваш API-KEY
+	- Найдите строчку под номером №47, выглядит строка вот так: `const API_KEY = 'KEY_PLACEHOLDER';`
+	- Вставьте свой API-ключ вместо `KEY_PLACEHOLDER` (не убирайте одинарные кавычки вокруг `KEY_PLACEHOLDER`.
