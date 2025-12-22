@@ -97,7 +97,7 @@
 
                 document.getElementById('s_rating').innerText = (rating * 100).toFixed(2) + '%';
             } else {
-                document.getElementById('s_rating').innerText = 'Нет отзывов';
+                document.getElementById('s_rating').innerText = '-1';
             }
         });
 
