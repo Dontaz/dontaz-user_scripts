@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SteamDB & PCGamingWiki for Steam
 // @namespace    SteamDB-PCGamingWiki-for-Steam.dontaz
-// @version      1.0
+// @version      1.1
 // @description  Добавляет на страницу Steam кнопки SteamDB и PCGamingWiki, а также реальный онлайн и точный рейтинг от SteamDB.
 // @author       Dontaz
 // @match        https://store.steampowered.com/app/*
