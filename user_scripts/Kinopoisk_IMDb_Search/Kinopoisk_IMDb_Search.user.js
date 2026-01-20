@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kinopoisk & IMDb Search + Cross-Site Links
 // @namespace    Kinopoisk-IMDb-Search.dontaz
-// @version      1.0
+// @version      1.1
 // @description  Adds a manual search popup and cross-site search buttons for the current title
 // @author       Dontaz
 // @match        *://*/*
