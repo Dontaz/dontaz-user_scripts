@@ -130,7 +130,7 @@
         }
         .cross-site-link {
             position: fixed;
-            top: 100px;
+            top: 200px;
             right: 20px;
             z-index: 2147483646;
             background-color: #fff;
