@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL x Kodik
 // @namespace    MAL x Kodik by dontaz
-// @version      1.0
+// @version      2.0
 // @description  Userscript that adds a convenient "Watch" button to MyAnimeList anime pages, linking directly to the Kodik player. Seamlessly integrates into the sidebar with a clean, animated design.
 // @author       Dontaz
 // @match        https://myanimelist.net/anime/*
@@ -87,11 +87,51 @@
     `;
     document.head.appendChild(style);
 
+    function getTotalEpisodes() {
+        const curEpsSpan = document.querySelector('#curEps');
+        if (curEpsSpan) {
+            const dataNum = parseInt(curEpsSpan.getAttribute('data-num'), 10);
+            if (dataNum > 0) return dataNum;
+
+            const textNum = parseInt(curEpsSpan.textContent.trim(), 10);
+            if (textNum > 0) return textNum;
+        }
+
+        const episodesSpan = document.querySelector('span.information.studio.author span');
+        const sidebarItems = document.querySelectorAll('.leftside .spaceit_pad');
+        for (const item of sidebarItems) {
+            if (item.textContent.includes('Episodes:')) {
+                const num = parseInt(item.textContent.replace(/\D/g, ''), 10);
+                if (num > 0) return num;
+            }
+        }
+
+        return 0;
+    }
+
+    function getNextEpisode() {
+        const watchedInput = document.querySelector('#myinfo_watchedeps');
+        if (!watchedInput) return '';
+
+        const watchedValue = parseInt(watchedInput.value, 10);
+        if (isNaN(watchedValue) || watchedValue < 0) return '';
+
+        const totalEps = getTotalEpisodes();
+        const nextEpisode = watchedValue + 1;
+
+        if (totalEps > 0 && nextEpisode > totalEps) return '';
+
+        return nextEpisode.toString();
+    }
+
+    function buildKodikUrl(animeId) {
+        const episode = getNextEpisode();
+        return `https://mal-to-kodik.github.io/?anime=${animeId}&translation=&season=&episode=${episode}`;
+    }
+
     function checkAndAddButton() {
         const posterImage = document.querySelector('td.borderClass .leftside img[itemprop="image"], td.borderClass .leftside img.lazyloaded, td.borderClass .leftside a[href*="/anime/"] img');
         if (!posterImage || document.querySelector('.watch-button-container')) return;
-
-        let posterParent = posterImage.closest('a') || posterImage.parentElement;
 
         const leftside = document.querySelector('td.borderClass .leftside') || posterImage.closest('.leftside');
         if (!leftside) return;
@@ -103,7 +143,7 @@
 
         const watchButton = document.createElement('a');
         watchButton.className = 'watch-button';
-        watchButton.href = `https://mal-to-kodik.github.io/?anime=${animeId}&translation=&season=&episode=`;
+        watchButton.href = buildKodikUrl(animeId);
         watchButton.target = '_blank';
         watchButton.rel = 'noopener noreferrer';
         watchButton.innerHTML = `
@@ -112,6 +152,10 @@
             </svg>
             Watch Kodik
         `;
+
+        watchButton.addEventListener('click', function(e) {
+            this.href = buildKodikUrl(animeId);
+        });
 
         container.appendChild(watchButton);
 
