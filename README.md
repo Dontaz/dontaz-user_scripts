@@ -6,6 +6,18 @@
 )](https://boosty.to/dontaz) 
 [![DonationAlerts](https://img.shields.io/badge/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20-%20Donation%20Alerts%20-%20DonationAlerts?style=flat&color=orange)](https://www.donationalerts.com/r/dontaz)
 
+## 📋 Содержание
+
+- [Инструкция по установке скриптов](#инструкция-по-установке-скриптов)
+- [Скрипты](#скрипты)
+	- [MAL x Kodik](#mal-x-kodik)
+	- [Discord Timestamp Generator](#discord-timestamp-generator)
+	- [Kinopoisk rating on IMDb](#kinopoisk-rating-on-imdb)
+	- [Kinopoisk & IMDb Search + Cross-Site Links](#kinopoisk--imdb-search--cross-site-links)
+	- [SteamDB & PCGamingWiki for Steam](#steamdb--pcgamingwiki-for-steam)
+
+---
+
 ## Инструкция по установке скриптов
 
 > [!IMPORTANT]
@@ -30,8 +42,6 @@
 ---
 
 ## Скрипты
-
----
 
 ### MAL x Kodik
 
