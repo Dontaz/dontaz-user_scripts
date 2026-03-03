@@ -8,10 +8,10 @@
 
 ## Инструкция по установке скриптов
 
-Для работы скриптов в браузере нужно установить одно из расширений:
-
-> [!info]
+> [!IMPORTANT]
 > Если у вас браузер «Google Chrome» (и Chrome-based), то [в настройках расширений нужно включить «Разрешить пользовательские скрипты (Allow User Scripts)»](https://www.tampermonkey.net/faq.php#Q209) для Violentmonkey или Tampermonkey, в зависимости от того, какое расширение вы выбрали для установки, иначе скрипты работать не будут. На других браузерах, как правило, ничего дополнительно делать не нужно (в Firefox, Zen, Edge работают сразу).
+
+Для работы скриптов в браузере нужно установить одно из расширений:
 
 [![Violentmonkey Chrome](https://img.shields.io/badge/%20%20-%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20Violentmonkey%20%D0%B4%D0%BB%D1%8F%20Chrome%20%D0%B8%20Chromium%20Based%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BE%D0%B2%20-%20%20?style=for-the-badge&logo=chromewebstore&logoColor=white&labelColor=E3351E&color=white)](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
 
