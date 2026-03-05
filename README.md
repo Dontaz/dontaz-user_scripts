@@ -96,4 +96,4 @@
 
 Добавляет кнопки [SteamDB](https://steamdb.info/) и [PCGamingWiki](https://www.pcgamingwiki.com). Отображает актуальный онлайн игроков и вычисляет точный рейтинг по [алгоритму SteamDB](https://steamdb.info/blog/steamdb-rating/). Работает даже на заблокированных по региону страницах.
 
-<img src="./images/SteamDB PCGamingWiki for Steam 1.avif" width="300"><img src="./images/SteamDB PCGamingWiki for Steam 2.avif" width="206">
+<img src="./images/SteamDB PCGamingWiki for Steam 1.avif" width="450"><img src="./images/SteamDB PCGamingWiki for Steam 2.avif" width="309">
