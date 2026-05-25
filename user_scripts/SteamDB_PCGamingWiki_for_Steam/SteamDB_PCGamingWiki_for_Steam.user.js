@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         SteamDB & PCGamingWiki for Steam
+// @name         SteamDB & PCGamingWiki & HowLongToBeat for Steam
 // @namespace    SteamDB-PCGamingWiki-for-Steam.dontaz
-// @version      1.4
-// @description  Добавляет на страницу Steam кнопки SteamDB и PCGamingWiki, а также реальный онлайн и точный рейтинг от SteamDB. Работает даже на заблокированных по региону страницах.
+// @version      1.5
+// @description  Добавляет на страницу Steam кнопки SteamDB, PCGamingWiki и HowLongToBeat, а также реальный онлайн и точный рейтинг от SteamDB. Работает даже на заблокированных по региону страницах.
 // @author       Dontaz
 // @match        https://store.steampowered.com/app/*
 // @match        https://store.steampowered.com/*
@@ -300,6 +300,52 @@
                 ytBtn.querySelector('svg').style.fill = '#ff4444';
             });
 
+            const hltbBtn = document.createElement('a');
+            hltbBtn.id = 'steamdb-pcgw-hltb-btn';
+            hltbBtn.target = '_blank';
+            hltbBtn.href = `https://howlongtobeat.com/?q=${encodeURIComponent(appName)}`;
+            hltbBtn.style.cssText = `
+                flex: 1;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 0 20px;
+                height: 36px;
+                text-decoration: none;
+                background: linear-gradient(135deg, #1a3a1a 0%, #0e2a0e 100%);
+                color: #a3d200;
+                border: 1px solid rgba(163, 210, 0, 0.3);
+                border-radius: 3px;
+                cursor: pointer;
+                font-family: "Motiva Sans", sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 0.3px;
+                transition: all 0.25s ease;
+            `;
+            hltbBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3d200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span style="font-size: 14px; display: block;">HowLongToBeat</span>
+            `;
+            hltbBtn.addEventListener('mouseenter', () => {
+                hltbBtn.style.background = 'linear-gradient(135deg, #264d26 0%, #1c441c 100%)';
+                hltbBtn.style.color = '#ffffff';
+                hltbBtn.style.borderColor = 'rgba(163, 210, 0, 0.6)';
+                hltbBtn.style.boxShadow = '0 0 12px rgba(163, 210, 0, 0.15)';
+                hltbBtn.querySelector('svg').style.stroke = '#ffffff';
+            });
+            hltbBtn.addEventListener('mouseleave', () => {
+                hltbBtn.style.background = 'linear-gradient(135deg, #1a3a1a 0%, #0e2a0e 100%)';
+                hltbBtn.style.color = '#a3d200';
+                hltbBtn.style.borderColor = 'rgba(163, 210, 0, 0.3)';
+                hltbBtn.style.boxShadow = 'none';
+                hltbBtn.querySelector('svg').style.stroke = '#a3d200';
+            });
+
             GM_xmlhttpRequest({
                 method: "GET",
                 url: `https://store.steampowered.com/api/appdetails?appids=${appId}`,
@@ -312,6 +358,7 @@
                             appName = appData.name;
                             titleEl.innerText = appName;
                             ytBtn.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(appName + ' trailer')}`;
+                            hltbBtn.href = `https://howlongtobeat.com/?q=${encodeURIComponent(appName)}`;
 
                             if (appData.short_description) {
                                 descEl.innerText = appData.short_description;
@@ -391,16 +438,16 @@
                                 screenshotsContainer.appendChild(thumb);
                             }
                         } else {
-                            fetchAppNameFallback(appId, titleEl);
+                            fetchAppNameFallback(appId, titleEl, hltbBtn);
                             mediaRow.style.display = 'none';
                         }
                     } catch(e) {
-                        fetchAppNameFallback(appId, titleEl);
+                        fetchAppNameFallback(appId, titleEl, hltbBtn);
                         mediaRow.style.display = 'none';
                     }
                 },
                 onerror: () => {
-                    fetchAppNameFallback(appId, titleEl);
+                    fetchAppNameFallback(appId, titleEl, hltbBtn);
                     mediaRow.style.display = 'none';
                 }
             });
@@ -447,6 +494,7 @@
             container.appendChild(createLockedBtn('SteamDB', `https://steamdb.info/app/${appId}/`));
             container.appendChild(createLockedBtn('PCGamingWiki', `https://www.pcgamingwiki.com/api/appid.php?appid=${appId}`));
             container.appendChild(createLockedBtn('Steam Store', `https://store.steampowered.com/app/${appId}/`));
+            container.appendChild(hltbBtn);
             container.appendChild(ytBtn);
 
         } else {
@@ -493,6 +541,10 @@
                 return btn;
             }
 
+            const pageTitleEl = document.querySelector('.apphub_AppName') || document.querySelector('#appHubAppName');
+            const gameNameForHltb = pageTitleEl ? pageTitleEl.innerText.trim() : `App ${appId}`;
+
+            container.prepend(createNormalBtn('HowLongToBeat', `https://howlongtobeat.com/?q=${encodeURIComponent(gameNameForHltb)}`));
             container.prepend(createNormalBtn('PCGamingWiki', `https://www.pcgamingwiki.com/api/appid.php?appid=${appId}`));
             container.prepend(createNormalBtn('SteamDB', `https://steamdb.info/app/${appId}/`));
             container.prepend(statsWrapper);
@@ -549,7 +601,7 @@
         });
     }
 
-    function fetchAppNameFallback(appId, titleEl) {
+    function fetchAppNameFallback(appId, titleEl, hltbBtn) {
         GM_xmlhttpRequest({
             method: "GET",
             url: `https://store.steampowered.com/api/appdetails?appids=${appId}`,
@@ -558,7 +610,11 @@
                 try {
                     const data = JSON.parse(res.responseText);
                     if (data[appId] && data[appId].success && data[appId].data) {
-                        titleEl.innerText = data[appId].data.name;
+                        const name = data[appId].data.name;
+                        titleEl.innerText = name;
+                        if (hltbBtn) {
+                            hltbBtn.href = `https://howlongtobeat.com/?q=${encodeURIComponent(name)}`;
+                        }
                     }
                 } catch(e) {}
             }
