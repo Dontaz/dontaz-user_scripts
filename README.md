@@ -84,7 +84,7 @@
 		- На главной странице сайта перейдите в профиль (кнопка "Профиль" справа-сверху)
 		- Скопируйте ваш API-KEY
 	- Найдите строчку под номером №47, выглядит строка вот так: `const API_KEY = 'KEY_PLACEHOLDER';`
-	- Вставьте свой API-ключ вместо `KEY_PLACEHOLDER` (не убирайте одинарные кавычки вокруг `KEY_PLACEHOLDER`.
+	- Вставьте свой API-ключ вместо `KEY_PLACEHOLDER` (не убирайте одинарные кавычки вокруг `KEY_PLACEHOLDER`).
 
 <img src="./images/Kinopoisk rating on IMDb.avif" width="820">
 
