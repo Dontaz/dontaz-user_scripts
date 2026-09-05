@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         MAL x Kodik
 // @namespace    MAL x Kodik by dontaz
-// @version      2.0
+// @version      2.1
 // @description  Userscript that adds a convenient "Watch" button to MyAnimeList anime pages, linking directly to the Kodik player. Seamlessly integrates into the sidebar with a clean, animated design.
 // @author       Dontaz
 // @match        https://myanimelist.net/anime/*
+// @match        https://myanimelist.net/anime.php*
 // @grant        none
 // @updateURL    https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/MALxKodik/MALxKodik.user.js
 // @downloadURL  https://github.com/Dontaz/dontaz-user_scripts/raw/refs/heads/main/user_scripts/MALxKodik/MALxKodik.user.js
@@ -136,7 +137,15 @@
         const leftside = document.querySelector('td.borderClass .leftside') || posterImage.closest('.leftside');
         if (!leftside) return;
 
-        const animeId = window.location.pathname.split('/')[2];
+        let animeId;
+        if (window.location.pathname.includes('anime.php')) {
+            const urlParams = new URLSearchParams(window.location.search);
+            animeId = urlParams.get('id');
+        } else {
+            animeId = window.location.pathname.split('/')[2];
+        }
+
+        if (!animeId) return;
 
         const container = document.createElement('div');
         container.className = 'watch-button-container';
