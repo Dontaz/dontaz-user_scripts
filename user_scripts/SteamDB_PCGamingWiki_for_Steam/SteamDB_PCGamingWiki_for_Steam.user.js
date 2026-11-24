@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SteamDB & PCGamingWiki & HowLongToBeat for Steam
 // @namespace    SteamDB-PCGamingWiki-for-Steam.dontaz
-// @version      1.6
-// @description  Добавляет на страницу Steam кнопки SteamDB, PCGamingWiki и HowLongToBeat, а также реальный онлайн и точный рейтинг от SteamDB. Работает даже на заблокированных по региону страницах.
+// @version      1.7
+// @description  Добавляет на страницу Steam кнопки SteamDB, PCGamingWiki, HowLongToBeat и YouTube-трейлера, а также текущий онлайн и рейтинг, рассчитанный по формуле SteamDB из отзывов Steam. Работает и на страницах, заблокированных по региону.
 // @author       Dontaz
 // @match        https://store.steampowered.com/app/*
 // @match        https://store.steampowered.com/*
